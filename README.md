@@ -11,12 +11,12 @@ For more information, examples and developer information, read the [Wiki].
 
 First you need to clone the tool:
 
-```sh
+~~```sh
 git clone git@github.com:HWDexperte/ts3observer.git
-```
+```~~
 
 ```sh
-git@github.com:xink2594/ts3observer.git
+git clone git@github.com:xink2594/ts3observer.git
 ```
 
 After that, you need some requirements:
