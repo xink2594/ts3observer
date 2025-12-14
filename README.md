@@ -15,6 +15,10 @@ First you need to clone the tool:
 git clone git@github.com:HWDexperte/ts3observer.git
 ```
 
+```sh
+git@github.com:xink2594/ts3observer.git
+```
+
 After that, you need some requirements:
 
 ```sh
