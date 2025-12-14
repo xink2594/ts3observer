@@ -48,7 +48,7 @@ def get_modified_config(content, plugin_name, plugin_module):
     top = mark[0]+key+'\n\n'
     bottom = mark[1]
 
-    plugin_cfg = yaml.load(bottom)
+    plugin_cfg = yaml.load(bottom, Loader=yaml.SafeLoader)
     plugin_cfg['plugins'].update({plugin_name: {'enable':plugin_module.Config.enable, 'interval':plugin_module.Config.interval}})
 
     bottom = yaml.dump(plugin_cfg, default_flow_style=False)
@@ -56,7 +56,7 @@ def get_modified_config(content, plugin_name, plugin_module):
 
 def get_plugin_config(plugin_name):
     with open('{}/conf/{}.yml'.format(ts3o.base_path, plugin_name), 'r') as cfg:
-        config = yaml.load(cfg.read())
+        config = yaml.load(cfg.read(), Loader=yaml.SafeLoader)
     return config
 
 def check_plugin_data(plugin_name, plugin_module, plugin_object):

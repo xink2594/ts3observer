@@ -41,7 +41,7 @@ class CommandLineInterface(object):
                 # executed before removed out of the queue...
                 continue
             except KeyboardInterrupt as e:
-                print ''
+                print('')
                 logging.info('Shutting down')
                 supervisor.shutdown()
                 raise ShutDownException()
@@ -53,7 +53,7 @@ class CommandLineInterface(object):
         control_cycles(start_timestamp, end_timestamp)
 
     def utils(self):
-        print getattr(CliHelper(), ts3o.args.utils)()
+        print(getattr(CliHelper(), ts3o.args.utils)())
 
     def version(self):
         f = open(path('/.version'), 'r')

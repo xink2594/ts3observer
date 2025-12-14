@@ -9,4 +9,4 @@ class Configuration(dict):
     def __init__(self, path):
         ''' Initialize the file '''
         with open(path, 'r') as f:
-            self.update(yaml.load(f))
+            self.update(yaml.load(f, Loader=yaml.SafeLoader))

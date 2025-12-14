@@ -51,7 +51,8 @@ class Ts3o(object):
 
 def _setup():
     ''' Define some globals for ts3observer '''
-    __builtins__.ts3o = Ts3o()
+    import builtins
+    builtins.ts3o = Ts3o()
     ts3o.base_path = os.path.abspath(os.path.dirname(__file__))
 
 

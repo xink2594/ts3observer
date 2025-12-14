@@ -73,17 +73,17 @@ def print_traceback():
     exc_type, exc_value, exc_traceback = sys.exc_info()
     tb = traceback.format_exception(exc_type, exc_value, exc_traceback)
     for line in tb[:-1]:
-        print line.rstrip('\r\n')
+        print(line.rstrip('\r\n'))
 
 def print_buginfo():
-    print 'You found a Bug? Report it! (https://github.com/HWDexperte/ts3observer/issues/new)'
+    print('You found a Bug? Report it! (https://github.com/HWDexperte/ts3observer/issues/new)')
 
 
 #####
 # Some general exceptions
 
 class NoConfigFileException(CriticalException):
-    msg = 'There is no \'/conf/ts3observer.conf\' file. Please copy the example and modify it!'
+    msg = 'There is no \'/conf/ts3observer.yml\' file. Please copy the example and modify it!'
 
 class ShutDownException(CriticalException):
     msg = 'Shutting down ...'

@@ -12,10 +12,10 @@
 # This part should be very self-explaining. You MUST modify every of this 4
 # settings to your needs. With 'serv', you can specify a server instance (if you
 # have multiple server instance running. Else if should be 1)
-host: 'localhost'
+host: '121.43.58.136'
 port: 10011
-user: 'QueryAdmin_username'
-pass: 'QueryAdmin_password'
+user: 'serveradmin'
+pass: 's8n2J9dwo'
 serv: 1
 
 # The displayname defines the name the ts3observer will use after a successful

@@ -2,7 +2,17 @@
 
 import logging
 import time
-import telnetlib
+try:
+    import telnetlib
+except ImportError:
+    # Python 3.13+ compatibility
+    import sys
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+    from telnetlib_compat import Telnet as telnetlib_Telnet
+    
+    class telnetlib:
+        Telnet = telnetlib_Telnet
 
 from ts3observer.factory import ClientFactory, ChannelFactory
 from ts3observer.utils import TelnetUtils, Escaper

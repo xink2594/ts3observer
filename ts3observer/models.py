@@ -1,7 +1,7 @@
 ''' Here i will define some models to use '''
 
 import logging
-from utils import Escaper
+from .utils import Escaper
 
 
 class Client(object):
