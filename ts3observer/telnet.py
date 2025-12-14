@@ -112,9 +112,17 @@ class TelnetInterface(object):
     def _query(self, command):
         ''' For internal usage to simplify telnet queries '''
         #logging.debug('TelnetQuery: {}'.format(command))
-        self.tn.write('{}\n'.format(command))
+        # Python 3.8 compatibility: encode string to bytes for telnetlib
+        command_str = '{}\n'.format(command)
+        if isinstance(command_str, str):
+            command_str = command_str.encode('utf-8')
+        self.tn.write(command_str)
         try:
-            query_result = self.tn.read_until('msg=ok', 2)
+            # Python 3.8 compatibility: use bytes for read_until
+            query_result = self.tn.read_until(b'msg=ok', 2)
+            # Convert bytes to string if needed
+            if isinstance(query_result, bytes):
+                query_result = query_result.decode('utf-8', errors='ignore')
             raw_result = TelnetUtils.remove_linebreaks(query_result)
             result = TelnetUtils.validate_result(command, raw_result)
 
